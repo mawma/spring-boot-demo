@@ -112,8 +112,9 @@ public class ArticleRepositoryTest extends SpringBootDemoMongodbApplicationTests
         Update update = new Update();
         update.inc("thumbUp", 1L);
         update.inc("visits", 1L);
+        //（直接注入MongoTemplate方式操作mongodb
         mongoTemplate.updateFirst(query, update, "article");
-
+        //
         articleRepo.findById(1L).ifPresent(article -> log.info("【标题】= {}【点赞数】= {}【访客数】= {}", article.getTitle(), article.getThumbUp(), article.getVisits()));
     }
 
