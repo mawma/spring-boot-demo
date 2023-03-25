@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * <p>
  * 文章 Dao
- * dao层继承 MongoRepository<实体类，主键类型>
  * </p>
  *
  * @author yangkai.shen
